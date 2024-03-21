@@ -1,0 +1,133 @@
+/* Estilos generales */
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flower-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flower {
+  height: 200px;
+  width: 200px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #000;
+  animation: pulsate 2s infinite;
+}
+
+.text-above,
+.text-below {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+}
+
+.text-above {
+  top: -60px;
+}
+
+.text-below {
+  bottom: -60px;
+}
+
+@keyframes pulsate {
+  0% {
+      transform: scale(1.5);
+  }
+  50% {
+      transform: scale(1.6);
+  }
+  100% {
+      transform: scale(1.5);
+  }
+}
+
+.mid {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #000, #ff5e00, #000);
+  z-index: 4;
+  background-size: 5px 5px;
+  filter: drop-shadow(0 0 8px #682600);
+}
+
+.Petal1, .Petal2, .Petal3 {
+  position: absolute;
+  z-index: 3;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 5px #e05200);
+}
+
+.Petal1 {
+  left: 40px;
+  width: 120px;
+  height: 30px;
+  background: radial-gradient(circle, #ff5e00, #ffbb00);
+}
+
+.Petal2, .Petal3 {
+  left: 0;
+  width: 200px;
+  height: 40px;
+  background: radial-gradient(circle, #ff5e00, #fbd702);
+}
+
+.Petal3 {
+  filter: drop-shadow(0 0 2px #fbd702);
+}
+
+.Petal1.p1 { transform: rotate(22.5deg); }
+.Petal1.p2 { transform: rotate(67.5deg); }
+.Petal1.p3 { transform: rotate(110.5deg); }
+.Petal1.p4 { transform: rotate(157.5deg); }
+
+.Petal2.p2 { transform: rotate(90deg); }
+.Petal2.p3 { transform: rotate(45deg); }
+.Petal2.p4 { transform: rotate(135deg); }
+
+.Petal3.p1 { transform: rotate(22.5deg); }
+.Petal3.p2 { transform: rotate(67.5deg); }
+.Petal3.p3 { transform: rotate(110.5deg); }
+.Petal3.p4 { transform: rotate(157.5deg); }
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .flower {
+      height: 150px;
+      width: 150px;
+  }
+
+  .text-above, .text-below {
+      font-size: 20px;
+      top: -45px;
+      bottom: -45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flower {
+      height: 100px;
+      width: 100px;
+      animation: none;
+  }
+
+  .text-above, .text-below {
+      font-size: 16px;
+      top: -35px;
+      bottom: -35px;
+  }
+}
